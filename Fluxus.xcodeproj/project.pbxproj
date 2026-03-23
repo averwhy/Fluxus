@@ -6,13 +6,37 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BB7E12672F71AC2D0083FFB1 /* B612Mono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7E12642F71AC2D0083FFB1 /* B612Mono-BoldItalic.ttf */; };
+		BB7E12682F71AC2D0083FFB1 /* B612Mono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7E12632F71AC2D0083FFB1 /* B612Mono-Bold.ttf */; };
+		BB7E12692F71AC2D0083FFB1 /* B612Mono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7E12652F71AC2D0083FFB1 /* B612Mono-Italic.ttf */; };
+		BB7E126A2F71AC2D0083FFB1 /* B612Mono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7E12662F71AC2D0083FFB1 /* B612Mono-Regular.ttf */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		BB299BFE2F4D590300C4967B /* Fluxus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluxus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB7E12632F71AC2D0083FFB1 /* B612Mono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B612Mono-Bold.ttf"; sourceTree = "<group>"; };
+		BB7E12642F71AC2D0083FFB1 /* B612Mono-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B612Mono-BoldItalic.ttf"; sourceTree = "<group>"; };
+		BB7E12652F71AC2D0083FFB1 /* B612Mono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B612Mono-Italic.ttf"; sourceTree = "<group>"; };
+		BB7E12662F71AC2D0083FFB1 /* B612Mono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B612Mono-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BB7E12772F71AD010083FFB1 /* Exceptions for "Fluxus" folder in "Fluxus" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = BB299BFD2F4D590300C4967B /* Fluxus */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BB299C002F4D590300C4967B /* Fluxus */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BB7E12772F71AD010083FFB1 /* Exceptions for "Fluxus" folder in "Fluxus" target */,
+			);
 			path = Fluxus;
 			sourceTree = "<group>";
 		};
@@ -40,6 +64,10 @@
 		BB299BFF2F4D590300C4967B /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				BB7E12632F71AC2D0083FFB1 /* B612Mono-Bold.ttf */,
+				BB7E12642F71AC2D0083FFB1 /* B612Mono-BoldItalic.ttf */,
+				BB7E12652F71AC2D0083FFB1 /* B612Mono-Italic.ttf */,
+				BB7E12662F71AC2D0083FFB1 /* B612Mono-Regular.ttf */,
 				BB299BFE2F4D590300C4967B /* Fluxus.app */,
 			);
 			name = Products;
@@ -109,6 +137,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB7E12672F71AC2D0083FFB1 /* B612Mono-BoldItalic.ttf in Resources */,
+				BB7E12682F71AC2D0083FFB1 /* B612Mono-Bold.ttf in Resources */,
+				BB7E12692F71AC2D0083FFB1 /* B612Mono-Italic.ttf in Resources */,
+				BB7E126A2F71AC2D0083FFB1 /* B612Mono-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +291,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fluxus/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -291,6 +324,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fluxus/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
