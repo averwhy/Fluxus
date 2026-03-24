@@ -6,13 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		BB7E12672F71AC2D0083FFB1 /* B612Mono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7E12642F71AC2D0083FFB1 /* B612Mono-BoldItalic.ttf */; };
-		BB7E12682F71AC2D0083FFB1 /* B612Mono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7E12632F71AC2D0083FFB1 /* B612Mono-Bold.ttf */; };
-		BB7E12692F71AC2D0083FFB1 /* B612Mono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7E12652F71AC2D0083FFB1 /* B612Mono-Italic.ttf */; };
-		BB7E126A2F71AC2D0083FFB1 /* B612Mono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7E12662F71AC2D0083FFB1 /* B612Mono-Regular.ttf */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		BB299BFE2F4D590300C4967B /* Fluxus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluxus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7E12632F71AC2D0083FFB1 /* B612Mono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B612Mono-Bold.ttf"; sourceTree = "<group>"; };
@@ -137,10 +130,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB7E12672F71AC2D0083FFB1 /* B612Mono-BoldItalic.ttf in Resources */,
-				BB7E12682F71AC2D0083FFB1 /* B612Mono-Bold.ttf in Resources */,
-				BB7E12692F71AC2D0083FFB1 /* B612Mono-Italic.ttf in Resources */,
-				BB7E126A2F71AC2D0083FFB1 /* B612Mono-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

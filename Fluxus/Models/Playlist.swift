@@ -13,7 +13,8 @@ class Playlist{
     var name: String
     var tracks: [Track]
     
-    init(tracks: [Track] = []) {
+    init(name: String, tracks: [Track] = []) {
+        self.name = name
         self.tracks = tracks
     }
 }
