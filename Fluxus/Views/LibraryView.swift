@@ -1,7 +1,6 @@
 //
-//  Library.swift
+//  LibraryView.swift
 //  
-//
 //  Created by avery b on 2/23/26.
 //
 

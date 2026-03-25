@@ -12,8 +12,8 @@ struct MixerView: View {
     var body: some View {
         HStack {
             VStack {
-                Text("Deck 1")
-                Slider(value: .constant(0.7), in: 0...1) { Text("Volume") }
+                Text("Deck 1").font(.appBody)
+                Slider(value: .constant(0.7), in: 0...1) { Text("Volume").font(.appBody) }
                     .rotationEffect(.degrees(-90))
                     .frame(width: 50, height: 100)
             }
@@ -21,7 +21,7 @@ struct MixerView: View {
             Spacer()
             
             VStack {
-                Text("Crossfader")
+                Text("Crossfader").font(.appBody)
                 Slider(value: .constant(0.5))
                     .frame(width: 300)
             }
@@ -29,8 +29,8 @@ struct MixerView: View {
             Spacer()
             
             VStack {
-                Text("Deck 2")
-                Slider(value: .constant(0.7), in: 0...1) { Text("Volume") }
+                Text("Deck 2").font(.appBody)
+                Slider(value: .constant(0.7), in: 0...1) { Text("Volume").font(.appBody) }
                     .rotationEffect(.degrees(-90))
                     .frame(width: 50, height: 100)
             }
