@@ -37,7 +37,3 @@ struct ContentView: View {
         .frame(minWidth: 1000, minHeight: 600)  // Minimum window size
     }
 }
-
-#Preview {
-    ContentView()
-}

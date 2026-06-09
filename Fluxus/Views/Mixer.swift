@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct MixerView: View {
+    @State var crossfader: Double
+    
     var body: some View {
         HStack {
             VStack {
@@ -22,8 +24,11 @@ struct MixerView: View {
             
             VStack {
                 Text("Crossfader").font(.appBody)
-                Slider(value: .constant(0.5))
+                Slider(value: $crossfader, in: -1...1)
                     .frame(width: 300)
+                    .onChange(of: crossfader){
+                        print("crossfader: \(self.crossfader)")
+                    }
             }
             
             Spacer()
@@ -37,5 +42,9 @@ struct MixerView: View {
         }
         .padding()
         .background(Color(nsColor: .controlBackgroundColor))
+    }
+    
+    init () {
+        self.crossfader = 0
     }
 }

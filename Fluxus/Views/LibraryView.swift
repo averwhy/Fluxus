@@ -13,9 +13,7 @@ struct LibraryView: View {
             Text("Library")
                 .font(.headline)
             
-            List(0..<20) { i in
-                Text("Track \(i)")
-            }
+            
         }
         .background(Color(nsColor: .controlBackgroundColor))
     }

@@ -19,54 +19,57 @@ func registerCustomFonts() {
     let fonts = ["B612Mono-Regular.ttf", "B612Mono-Bold.ttf", "B612Mono-Italic.ttf", "B612Mono-BoldItalic.ttf"]
     
     for font in fonts {
-            guard let url = Bundle.main.url(forResource: font, withExtension: "ttf") else {
-                print("MISSING FONT: \(font)")
-                continue
+        guard let url = Bundle.main.url(forResource: font, withExtension: "ttf") else {
+            print("MISSING FONT: \(font)")
+            continue
+        }
+        
+        var error: Unmanaged<CFError>?
+        let success = CTFontManagerRegisterFontsForURL(url as CFURL, .process, &error)
+        
+        if success {
+            print("REGISTERED: \(font)")
+        } else {
+            let message = error?.takeRetainedValue().localizedDescription ?? "UNKNOWN ERROR"
+            print("FAILED TO REGISTER \(font): \(message)")
+        }
+    }
+    
+    @main
+    struct FluxusApp: App {
+        @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+        
+        init() {
+            registerCustomFonts()
+        }
+        
+        var body: some Scene {
+            WindowGroup {
+                ContentView()
+                    .font(.appBody)
             }
+            .modelContainer(for: [Track.self, TrackLibrary.self, Playlist.self, Playlist.self, Analysis.self, Cue.self, Hotcue.self])
+            .windowStyle(.hiddenTitleBar)
+            .defaultSize(
+                width: NSScreen.main?.frame.size.width ?? 1000,
+                height: NSScreen.main?.frame.size.height ?? 800
+            )
             
-            var error: Unmanaged<CFError>?
-            let success = CTFontManagerRegisterFontsForURL(url as CFURL, .process, &error)
-            
-            if success {
-                print("REGISTERED: \(font)")
-            } else {
-                let message = error?.takeRetainedValue().localizedDescription ?? "UNKNOWN ERROR"
-                print("FAILED TO REGISTER \(font): \(message)")
+            Settings {
+                SettingsView()
             }
-}
 
-@main
-struct FluxusApp: App {
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
-    init() {
-        registerCustomFonts()
-    }
-    
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .font(.appBody)
-        }
-        .modelContainer(for: [Track.self, Playlist.self])
-        .windowStyle(.hiddenTitleBar)
-        .defaultSize(
-            width: NSScreen.main?.frame.size.width ?? 1200,
-            height: NSScreen.main?.frame.size.height ?? 800
-        )
-        
-        Settings {
-            SettingsView()
-        }
-        
-        .commands {
-            CommandGroup(after: .newItem) {
-                Button("New Playlist...") { }
+            .commands {
+                CommandGroup(replacing: .newItem) {
+                }
+                
+                CommandMenu("Library") {
+                    Button("Add song...") { }
+                }
             }
         }
-    }
-    
-    class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
+        
+        class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             func applicationDidFinishLaunching(_ notification: Notification) {
                 let mainWindow = NSApp.windows[0]
                 mainWindow.delegate = self
@@ -79,10 +82,17 @@ struct FluxusApp: App {
                 let response = alert.runModal()
                 if response == NSApplication.ModalResponse.alertFirstButtonReturn {
                     return false
-                    } else {
+                } else {
                     NSApplication.shared.terminate(self)
                     return true
                 }
             }
         }
+        
+    }
+}
+
+#Preview {
+    ContentView()
+        .font(.appBody)
 }

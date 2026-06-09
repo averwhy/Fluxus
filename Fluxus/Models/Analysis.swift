@@ -14,7 +14,7 @@ class Analysis {
     var waveform: [Double]
     var bpm: Double
     var key: String
-    var timeSignature_beats: Int16
+    var timeSignature_beats: Int16 // TODO make this a class
     var timeSignature_noteValue: Int16
     var createdAt: Date
     
